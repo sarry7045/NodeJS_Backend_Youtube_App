@@ -118,13 +118,14 @@ const loginUser = asyncHandler(async (req, res) => {
   // send cookies
 
   const { email, username, password } = req.body;
-  if (!email) {
+  if (!(username || email)) {
     throw new ApiError(400, "Username or Password Required");
   }
 
   const user = await User.findOne({
     $or: [{ username }, { email }],
   });
+
   if (!user) {
     throw new ApiError(404, "User does not Exist");
   }
@@ -139,7 +140,7 @@ const loginUser = asyncHandler(async (req, res) => {
   );
 
   const loggedInUser = await User.findById(user._id).select(
-    "-password, -refreshToken"
+    "-password -refreshToken"
   );
 
   const options = {
@@ -169,7 +170,7 @@ const logoutUser = asyncHandler(async (req, res) => {
     req.user._id,
     {
       $unset: {
-        refreshToken: undefined,
+        refreshToken: 1,
       },
     },
     {
@@ -229,7 +230,5 @@ const refreshAccessToken = asyncHandler(async (req, res) => {
     throw new ApiError(401, error?.message || "Invalid Refresh Token");
   }
 });
-
-
 
 export { registerUser, loginUser, logoutUser, refreshAccessToken };

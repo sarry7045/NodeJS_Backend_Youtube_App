@@ -1,11 +1,12 @@
 NodeJs Concurrency and Scalability
 Web Socket
 PUG 
-mongoose-aggregate-paginate-v2 - 
+Cloudinary - Cloud Storage Type
 Middleware - If we want to perform any task before any action.
-CORS - It's does'nt Allow any Unknow Port/or Data - Use NPM Package for more customize - Setup
+CORS - It's does'nt Allow any Unknow Port/or Data - Use NPM Package for more customize - Setup - Browser Security Feature
 Multer - Use for Files Upload
 NGINX - Use for Reverse Proxy (One Client Mutiple Servers), Load Balancers (Round Robbin Algorithum), Cookies handle
+MongoDB Aggregation - Suppose we have 100 data set and after some time we need only 50 data set for that situation we can use aggregation Technique
 
 
 
@@ -17,10 +18,11 @@ RefereshToken, AccesToken, Cookies, Validations - Done
 
 
 
-Tools:
-Moon Modeler - Paid - Project Structure Diagram
-Earser.io - Project Structure Diagram
-Cloudinary - Cloud Storage Type
 
 
-Todo : Push on Github
+
+
+
+
+
+Pending from Video 18 - 19th is Done, 22nd is Done, 25th is Done - Basically 5 Videos Remaining
